@@ -20,6 +20,8 @@
 #include "watcomconfig.h"
 #elif defined(HAVE_EXPAT_CONFIG_H)
 #include <expat_config.h>
+#else
+#define HAVE_MEMMOVE
 #endif /* ndef COMPILED_FROM_DSP */
 
 #include "ascii.h"
