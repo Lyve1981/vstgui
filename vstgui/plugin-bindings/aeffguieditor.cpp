@@ -154,15 +154,13 @@ void AEffGUIEditor::wait (uint32_t ms)
 //-----------------------------------------------------------------------------
 uint32_t AEffGUIEditor::getTicks ()
 {
-	#if MAC
+#if MAC
 	return (TickCount () * 1000) / 60;
-	
-	#elif WINDOWS
+#elif WINDOWS
 	return (uint32_t)GetTickCount ();
-	
-	#endif
-
+#else
 	return 0;
+#endif
 }
 
 //-----------------------------------------------------------------------------
