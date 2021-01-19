@@ -121,7 +121,7 @@ int32_t AEffGUIEditor::knobMode = kCircularMode;
 //-----------------------------------------------------------------------------
 bool AEffGUIEditor::setKnobMode (int32_t val) 
 {
-	AEffGUIEditor::knobMode = val;
+	knobMode = val;
 	return true;
 }
 
