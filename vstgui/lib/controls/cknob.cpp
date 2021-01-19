@@ -14,7 +14,7 @@ namespace VSTGUI {
 #if TARGET_OS_IPHONE
 static const float kCKnobRange = 300.f;
 #else
-static const float kCKnobRange = 200.f;
+static const float kCKnobRange = 300.f;
 #endif
 
 static constexpr CViewAttributeID kCKnobMouseStateAttribute = 'knms';
