@@ -635,6 +635,8 @@ bool decodeScaleFactorFromName (const std::string& name, const char (&identicato
 	std::string tmp (name);
 	tmp.erase (0, ++range.second);
 	tmp.erase (range.first - range.second);
+	if (tmp.empty())
+		return false;
 	scaleFactor = UTF8StringView (tmp.c_str ()).toDouble ();
 	return scaleFactor != 0;
 }
