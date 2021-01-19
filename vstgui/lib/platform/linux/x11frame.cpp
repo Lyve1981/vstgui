@@ -424,7 +424,7 @@ struct Frame::Impl : IFrameEventHandler
 				buttons |= translateModifiers (event.state);
 				doubleClickDetector.onMouseDown (where, buttons, event.time);
 				auto result = frame->platformOnMouseDown (where, buttons);
-				grabPointer ();
+//				grabPointer ();
 				if (result != kMouseEventNotHandled)
 				{
 					auto xcb = RunLoop::instance ().getXcbConnection ();
@@ -444,7 +444,7 @@ struct Frame::Impl : IFrameEventHandler
 				buttons |= translateModifiers (event.state);
 				doubleClickDetector.onMouseUp (where, buttons, event.time);
 				frame->platformOnMouseUp (where, buttons);
-				ungrabPointer ();
+//				ungrabPointer ();
 			}
 		}
 	}
