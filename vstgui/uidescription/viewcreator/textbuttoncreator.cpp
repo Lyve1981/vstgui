@@ -21,7 +21,7 @@ auto TextButtonCreator::getPositionStrings () -> PositionStringArray&
 {
 	static PositionStringArray positionsStrings = {
 	    {strLeft, "center above text", "center below text", strRight}};
-	static_assert (positionsStrings.size () == CDrawMethods::kIconRight + 1, "Update needed!");
+	static_assert(std::tuple_size<decltype(positionsStrings)>::value == CDrawMethods::kIconRight + 1, "Update needed!");
 	return positionsStrings;
 }
 
