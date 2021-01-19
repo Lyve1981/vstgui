@@ -54,11 +54,13 @@ public:
 		return std::ceil (theme.font->getSize () + 8);
 	}
 
-	CCoord calculateMaxWidth (CFrame* frame)
+	CCoord calculateMaxWidth (CFrame* frame, CFontDesc* font)
 	{
 		if (maxWidth >= 0.)
 			return maxWidth;
 		auto context = COffscreenContext::create (frame, 1, 1);
+		if(font)
+			context->setFont(font, font->getSize(), font->getStyle());
 		maxWidth = 0.;
 		maxTitleWidth = 0.;
 		hasRightMargin = false;
@@ -446,7 +448,7 @@ CView* setupGenericOptionMenu (Proc clickCallback, CViewContainer* container,
 	auto frame = container->getFrame ();
 	auto dataSource =
 	    makeOwned<DataSource> (container, optionMenu, clickCallback, theme, parentDataSource);
-	auto maxWidth = dataSource->calculateMaxWidth (frame);
+	auto maxWidth = dataSource->calculateMaxWidth (frame, theme.font.get());
 	if (parentDataSource)
 	{
 		viewRect.offset (viewRect.getWidth (), 0);
