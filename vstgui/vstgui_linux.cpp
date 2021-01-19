@@ -1,5 +1,7 @@
 ﻿#include "vstgui.cpp"
 
+#include "lib/platform/common/generictextedit.cpp"
+
 #include "lib/platform/linux/linuxstring.cpp"
 
 #include "lib/platform/linux/x11fileselector.cpp"
